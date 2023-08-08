@@ -72,6 +72,51 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* card */
+
+.card {
+	/* Add shadows to create the "card" effect */
+	box-shadow: 0 4px 8px 0 rgba(32, 34, 35, 0.63);
+	background-color: rgba(95, 183, 243, 0.09);
+	transition: 0.3s;
+	border-radius: 8px;
+	border: 0;
+	display:flex;
+	align-items: center;
+	position: relative;
+}
+
+.card img {
+	flex-grow:0;
+	flex-shrink:0;
+	border-radius: 300px;
+	display: block;
+	box-shadow: 0 4px 8px 0 rgba(73, 73, 73, 0.63);
+	width: 30%;
+	height: 30%;
+	margin: 16px 16px 16px 16px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 0 0 16px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.container p{
+	padding: 0;
+	margin: 0 0 0;
+}
+
 /* Basic */
 
 	@-ms-viewport {
