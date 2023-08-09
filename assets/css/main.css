@@ -114,7 +114,7 @@ input, select, textarea {
 
 .container p{
 	padding: 0;
-	margin: 0 0 0;
+	margin: 0 0 10px;
 }
 
 /* Basic */
