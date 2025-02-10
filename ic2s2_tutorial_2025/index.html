@@ -6,7 +6,7 @@
 -->
 <html lang="eng">
 <head>
-    <title>EGT Tutorial at ECAI23</title>
+    <title>IC2S2 Tutorial on RL and EGT</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -33,11 +33,16 @@
     <!-- Header -->
     <header id="header" class="alt">
         <span class="logo"><img src="images/logo.svg" alt=""/></span>
-        <h1>Social Dynamics and Evolutionary Game Theory</h1>
-        <p>This tutorial at <a href="https://ecai2023.eu">ECAI 2023</a> will provide an overview of the Evolutionary
-            Game Theory (EGT) field with emphasis on its
-            applicability to characterize hybrid human-AI multi-agent systems. We will introduce the main research
-            questions and practical challenges of implementing EGT models.
+        <h1>Reinforcement Learning and Evolutionary Game Theory Are Two Sides of the Same Coin</h1>
+        <p>
+            Evolutionary Game Theory (EGT) and Multi-Agent Reinforcement Learning (MARL) provide powerful methodological
+            frameworks for the study of the evolution of cooperation in large populations. The main objective of this
+            tutorial is to help social science practitioners acquire these new tools coming form AI and complex systems,
+            and computer science practitioners to understand their research in terms of economic models. With this, we
+            believe the present tutorial will raise awareness of the importance of EGT and RL for the study and
+            modelling of social dynamics in large populations, and introduce methods of wide relevance for the <a
+                href="https://www.ic2s2-2025.org">IC<sup>2</sup>S<sup>2</sup></a>
+            community.
         </p>
     </header>
 
@@ -45,10 +50,9 @@
     <nav id="nav">
         <ul>
             <li><a href="#intro" class="active">Summary</a></li>
-            <li><a href="#speaker" class="active">Speaker</a></li>
+            <li><a href="#speaker">Speakers</a></li>
             <li><a href="#first">Format and Outline</a></li>
             <li><a href="#second">Pre-requisites</a></li>
-            <li><a href="#third">Objectives</a></li>
             <li><a href="#cta">Material</a></li>
             <li><a href="#references">References</a></li>
         </ul>
@@ -63,32 +67,33 @@
                 <div class="content">
                     <header class="major">
                         <h2>Summary</h2>
-                        <h3>Presenter: Elias Fernández Domingos</h3>
+                        <h3>Presenters: Elias Fernández Domingos and Paolo Turrini</h3>
                     </header>
-                    <p>Classical game theory typically analyzes interactions between two (or a few) players and aims to
-                        answer how each individual can maximize their utility. Such a question, from a mathematical
-                        perspective, becomes very intricate and complex as a player must consider the utilities of all
-                        other players and any possible set of beliefs. Thus, following the famous work of Nash, it is
-                        often assumed that all players act in a way that maximizes their utility and believe that others
-                        will do the same. This simplifies the analysis and transforms it into a search for the points of
-                        equilibrium at which no player has any incentive to change its strategy (Nash equilibrium). This
-                        assumption requires that players have perfect knowledge about the game/environment and is
-                        referred to as rationality. Yet, it is often cumbersome to assume that individuals are rational
-                        in many social and biological systems, even in simple pairwise interactions. Moreover, whenever
-                        the problem requires a proper understanding of conflicts occurring in large populations, it
-                        becomes necessary to characterize the choices and strategies of many individuals throughout
-                        time, and not only at equilibrium. As such, in many real-world multi-agent systems, the goal is
-                        shifted towards the understanding of the complex ecologies of behaviors emerging from a given
-                        dilemma (or "game"). This is where evolutionary game theory (EGT) shines as a theoretical and
-                        computational framework.</p>
+                    <p>Classical equilibrium analysis makes overly simplistic assumptions about players' cognitive
+                        capacity, such as common knowledge of the game structure and common knowledge of rationality.
+                        Assuming that individuals are rational is often unjustified in many social and biological
+                        systems, even for simple pairwise interactions. Moreover, whenever the problem requires a proper
+                        understanding of conflicts occurring in large populations, it becomes necessary to characterise
+                        the choices and strategies of many individuals throughout time, and not only at equilibrium. As
+                        such, in many real-world multi-agent systems, the goal is shifted towards the understanding of
+                        the complex ecologies of behaviours emerging from a given dilemma (or "game"). This is where
+                        evolutionary game theory (EGT) shines as a theoretical and computational framework. Likewise,
+                        from the computational perspective, multi-agent reinforcement learning (MARL) models how
+                        self-interested agents learn and improve their policies through the accumulation of rewards
+                        coming from their past experience. Just like strategies in evolutionary game theory adapting to
+                        one another, agents' actions evolve based on their empirical returns. The similarity is no
+                        coincidence. In this tutorial we show how these two frameworks, although applied in different
+                        context, are two sides of the same coin, presenting fundamental mathematical results that
+                        demonstrate how the equilibria of population dynamics can be encoded by simple RL agents
+                        policies and the other way round.
+                    </p>
                     <p>
-                        In this tutorial, we aim to introduce the students to the main models used in EGT and offer an
-                        overview of the research in the field, with an emphasis on its applicability to characterize
-                        hybrid human-AI multi-agent systems both when considering unstructured (well-mixed) populations,
-                        as well as structured populations, whose interaction structure is organized into a Complex
-                        Network4. Moreover, we will pay special attention to the computational approaches to EGT, by
-                        summarizing the practical challenges of implementing the numerical and agent-based simulations
-                        required to model large-scale systems.
+                        We will provide use-cases in which each modelling framework is useful. This tutorial will help
+                        the social science practitioner acquire new tools coming from AI and complex systems, and
+                        computer science practitioners to understand their research in terms of economic models.
+                        Students will be able to follow the tutorial interactively through a series of Jupyter Notebooks
+                        that will be provided. Our objective is to offer a hands-on experience on how to use EGT and
+                        MARL to model social dynamics.
                     </p>
                 </div>
             </div>
@@ -96,23 +101,49 @@
 
         <section id="speaker" class="main">
             <header class="major">
-                <h2>Short Bio</h2>
+                <h2>Speakers</h2>
             </header>
-            <div class="card">
-                <div class="container" style="flex-basis:83%">
-                    <h2><b>Elias Fernández Domingos</b></h2>
-                    <h3>Postdoctoral Researcher at the Machine Learning Group, Université Libre de Bruxelles,
-                        Belgium</h3>
-                    <p>Elias is currently a Postdoctoral researcher (FNRS fellow) at the ULB - Brussels. He is
-                        interested in the origins of cooperation in social interactions and how can we maintain it in an
-                        increasingly complex and hybrid human-AI world. In his research he applies concepts and methods
-                        from (Evolutionary) Game Theory, Behavioural economics and Machine Learning to model collective
-                        (strategic) behaviour and validate it through behavioural economic experiments. Additionally,
-                        he is the creator of <a href="https://github.com/Socrats/EGTTools">EGTtools</a> a Python/C++
-                        toolbox for Evolutionary Game Theory.
-                    </p>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="container" style="flex-basis:83%">
+                        <h2><b>Elias Fernández Domingos</b></h2>
+                        <h3>Postdoctoral Researcher at the AI Lab, Vrije Universiteit Brussel,
+                            Belgium</h3>
+                        <p>Elias is currently a Post-doctoral researcher (F.W.O. fellow) at the Artificial Intelligence
+                            Lab
+                            of the Vrije
+                            Universiteit Brussel. Also affiliated with the Machine Learning Group (Université Libre de
+                            Bruxelles). He is interested in the origins of cooperation in social interactions and how we
+                            can
+                            maintain it in an increasingly complex and hybrid human-AI world. In his research, he
+                            applies
+                            concepts and methods from (Evolutionary) Game Theory, Behavioural economics, and Machine
+                            Learning to model collective (strategic) behaviour and validate it through behavioural
+                            economic
+                            Experiments. He is the creator of <a href="https://github.com/Socrats/EGTTools">EGTtools</a>
+                            a
+                            Python/C++
+                            toolbox for Evolutionary Game Theory.
+                        </p>
+                    </div>
+                    <img style="flex-basis:17%" src="images/profile_e_web.png" alt="personal picture"/>
                 </div>
-                <img style="flex-basis:17%" src="images/auto_pic.jpg" alt="personal picture"/>
+                <br>
+                <div class="card">
+                    <div class="container" style="flex-basis:83%">
+                        <h2><b>Paolo Turrini</b></h2>
+                        <h3>Associate Professor. Department of Computer Science, University of Warwick, UK</h3>
+                        <p> Paolo is interested in AI for social good, uses game theory and RL to design agents that
+                            achieve
+                            socially desirable objectives. Consistently publishes in top AI venues. PhD from Utrecht
+                            University, COFUND Marie Curie Fellow at the University of Luxembourg and Intra-European
+                            Marie Curie Fellow at Imperial College London, Imperial College Research Fellow.
+                            Now member of Board of Directors at IFAAMAS, the International Foundation for Autonomous
+                            Agents Research.
+                        </p>
+                    </div>
+                    <img style="flex-basis:17%" src="images/profile_p_web.png" alt="personal picture"/>
+                </div>
             </div>
         </section>
 
@@ -124,37 +155,36 @@
                         <h2>Format and Outline</h2>
                     </header>
                     <p>
-                        This is a <b>90 minutes</b> long tutorial. We divide the tutorial into two sections of 40
-                        minutes
-                        each
-                        with a 10-minute break in between. The tutorial will be interactive and the attendants will be
-                        able
-                        to
-                        follow the explanations and try them in a notebook that will be shared in a later date. We have
-                        the
-                        following tentative outline:
+                        We divide the tutorial into two sections of 85 minutes with a 10 minutes rest in between (a
+                        total of 3h):
                     </p>
                     <ol>
                         <li>
                             Part 1: Introduction to Evolutionary Game Theory
                             <ol>
                                 <li>Motivation and examples</li>
-                                <li>Evolutionary Dynamics and Game Theory</li>
                                 <li>Infinite and Finite populations</li>
                                 <li>Social Dynamics and Mechanisms for the Evolution of Cooperation</li>
+                                <li>Games on networks</li>
                             </ol>
                         </li>
                         <li>
-                            Part 2: Interactions in structured populations and Applications
+                            Part 2: Introduction to Multi-Agent Reinforcement Learning
                             <ol>
-                                <li>Introduction to Games on Networks</li>
-                                <li>Practical challenges of implementing EGT models on unstructured and structured
-                                    populations
+                                <li>Many learning agents</li>
+                                <li>Key algorithms (Cross-Learning, Q-learning)
                                 </li>
-                                <li>EGT and AI: multi-agent interactions from a complex systems perspective</li>
+                                <li>Connection with EGT</li>
+                                <li>Emergence of Norms among learning agents</li>
                             </ol>
                         </li>
                     </ol>
+                    <p>
+                        Each part of the tutorial will be accompanied by a Jupyter notebook which will contain the
+                        examples shown in the presentation. In this way, participants will be able to follow
+                        interactively the presentation, and test themselves the outcome of the framework in different
+                        scenarios.
+                    </p>
                 </div>
             </div>
         </section>
@@ -170,35 +200,8 @@
                         basic knowledge in the following areas:</p>
                     <ul>
                         <li>Basic knowledge of dynamical systems</li>
-                        <li>Basic knowledge of Complex Networks</li>
+                        <li>Basic knowledge of reinforcement learning</li>
                         <li>Basic knowledge of Markov Chains</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Second Section -->
-        <section id="third" class="main">
-            <div class="spotlight">
-                <div class="content">
-                    <header class="major">
-                        <h2>Objectives</h2>
-                    </header>
-                    <p>The importance of AI in social ecosystems, and particularly, its effect on human cooperation and
-                        fairness, has gained increasing attention. Evolutionary Game Theory (EGT) provides a powerful
-                        methodological framework for the study of the evolution of cooperation in large populations.
-                        Yet, the AI and EGT research communities rarely engage. We believe the present tutorial will
-                        raise awareness of the importance of EGT for social cooperative AI and introduce methods of
-                        large relevance for AI researchers in this field. </p>
-
-                    <p>
-                        Our tutorial serves the following objectives:
-                    </p>
-                    <ul>
-                        <li>Motivate and explain a topic of emerging importance for AI
-                        </li>
-                        <li>Provide instructions in established but specialized AI methodologies</li>
-                        <li>Introduce AI audience to an external topic that can motivate or use AI research</li>
                     </ul>
                 </div>
             </div>
@@ -209,16 +212,7 @@
             <header class="major">
                 <h2>Material</h2>
             </header>
-            <p>To follow the tutorial, you should have both Python (>=3.8) and Jupyter notebook installed.
-                Please, please clone the repository <a href="https://github.com/Socrats/egt-tutorial">egt-tutorial</a>.
-                This repository contains several jupyter notebooks. Follow the following steps: </p>
-            <ol>
-                <li>
-                    Open the notebook named "ECAI_tutorial.ipynb".
-                </li>
-                <li>Install all the pre-requisites indicated there.</li>
-            </ol>
-            <p>Other relevant material can be found <a href="https://github.com/Socrats/EGTTools">here</a>. </p>
+            <p>Will be added soon.</p>
         </section>
 
         <!-- Get Started -->
@@ -258,7 +252,7 @@
             <h2>Contact</h2>
             <dl class="alt">
                 <dt>Email</dt>
-                <dd>elias dot fernandez dot domingos at ulb dot be</dd>
+                <dd>elias dot fernandez dot domingos at vub dot be</dd>
             </dl>
             <ul class="icons">
                 <li><a href="https://twitter.com/esocrats" class="icon brands fa-twitter alt"><span
