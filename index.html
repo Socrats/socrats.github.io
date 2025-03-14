@@ -1,281 +1,485 @@
 <!DOCTYPE HTML>
 <!--
-	Stellar by HTML5 UP
+	Strata by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html lang="eng">
+<html lang="en">
 <head>
-    <title>EGT Tutorial at ECAI23</title>
+    <title>Strata by HTML5 UP</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
-    <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css"/>
-    </noscript>
-
-    <link rel="icon" href="https://efernandez.eu/images/avatar.png">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@nytimes">
-    <meta name="twitter:creator" content="@esocrats">
-    <meta name="twitter:title" content="EGT Tutorial at ECAI23">
-    <meta name="twitter:description"
-          content="Social Dynamics and Evolutionary Game Theory Tutorial at ECAI 2023. Dates: to be determined.">
-    <meta name="twitter:image"
-          content="https://efernandez.eu/images/avatar.png">
 </head>
 <body class="is-preload">
 
-<!-- Wrapper -->
-<div id="wrapper">
-
-    <!-- Header -->
-    <header id="header" class="alt">
-        <span class="logo"><img src="images/logo.svg" alt=""/></span>
-        <h1>Social Dynamics and Evolutionary Game Theory</h1>
-        <p>This tutorial at <a href="https://ecai2023.eu">ECAI 2023</a> will provide an overview of the Evolutionary
-            Game Theory (EGT) field with emphasis on its
-            applicability to characterize hybrid human-AI multi-agent systems. We will introduce the main research
-            questions and practical challenges of implementing EGT models.
-        </p>
-    </header>
-
-    <!-- Nav -->
-    <nav id="nav">
-        <ul>
-            <li><a href="#intro" class="active">Summary</a></li>
-            <li><a href="#speaker" class="active">Speaker</a></li>
-            <li><a href="#first">Format and Outline</a></li>
-            <li><a href="#second">Pre-requisites</a></li>
-            <li><a href="#third">Objectives</a></li>
-            <li><a href="#cta">Material</a></li>
-            <li><a href="#references">References</a></li>
-        </ul>
-    </nav>
-
-    <!-- Main -->
-    <div id="main">
-
-        <!-- Introduction -->
-        <section id="intro" class="main">
-            <div class="spotlight">
-                <div class="content">
-                    <header class="major">
-                        <h2>Summary</h2>
-                        <h3>Presenter: Elias Fernández Domingos</h3>
-                    </header>
-                    <p>Classical game theory typically analyzes interactions between two (or a few) players and aims to
-                        answer how each individual can maximize their utility. Such a question, from a mathematical
-                        perspective, becomes very intricate and complex as a player must consider the utilities of all
-                        other players and any possible set of beliefs. Thus, following the famous work of Nash, it is
-                        often assumed that all players act in a way that maximizes their utility and believe that others
-                        will do the same. This simplifies the analysis and transforms it into a search for the points of
-                        equilibrium at which no player has any incentive to change its strategy (Nash equilibrium). This
-                        assumption requires that players have perfect knowledge about the game/environment and is
-                        referred to as rationality. Yet, it is often cumbersome to assume that individuals are rational
-                        in many social and biological systems, even in simple pairwise interactions. Moreover, whenever
-                        the problem requires a proper understanding of conflicts occurring in large populations, it
-                        becomes necessary to characterize the choices and strategies of many individuals throughout
-                        time, and not only at equilibrium. As such, in many real-world multi-agent systems, the goal is
-                        shifted towards the understanding of the complex ecologies of behaviors emerging from a given
-                        dilemma (or "game"). This is where evolutionary game theory (EGT) shines as a theoretical and
-                        computational framework.</p>
-                    <p>
-                        In this tutorial, we aim to introduce the students to the main models used in EGT and offer an
-                        overview of the research in the field, with an emphasis on its applicability to characterize
-                        hybrid human-AI multi-agent systems both when considering unstructured (well-mixed) populations,
-                        as well as structured populations, whose interaction structure is organized into a Complex
-                        Network4. Moreover, we will pay special attention to the computational approaches to EGT, by
-                        summarizing the practical challenges of implementing the numerical and agent-based simulations
-                        required to model large-scale systems.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="speaker" class="main">
-            <header class="major">
-                <h2>Short Bio</h2>
-            </header>
-            <div class="card">
-                <div class="container" style="flex-basis:83%">
-                    <h2><b>Elias Fernández Domingos</b></h2>
-                    <h3>Postdoctoral Researcher at the Machine Learning Group, Université Libre de Bruxelles,
-                        Belgium</h3>
-                    <p>Elias is currently a Postdoctoral researcher (FNRS fellow) at the ULB - Brussels. He is
-                        interested in the origins of cooperation in social interactions and how can we maintain it in an
-                        increasingly complex and hybrid human-AI world. In his research he applies concepts and methods
-                        from (Evolutionary) Game Theory, Behavioural economics and Machine Learning to model collective
-                        (strategic) behaviour and validate it through behavioural economic experiments. Additionally,
-                        he is the creator of <a href="https://github.com/Socrats/EGTTools">EGTtools</a> a Python/C++
-                        toolbox for Evolutionary Game Theory.
-                    </p>
-                </div>
-                <img style="flex-basis:17%" src="ic2s2_tutorial_2025/images/profile_e.jpg" alt="personal picture"/>
-            </div>
-        </section>
-
-        <!-- First Section -->
-        <section id="first" class="main">
-            <div class="spotlight">
-                <div class="content">
-                    <header class="major">
-                        <h2>Format and Outline</h2>
-                    </header>
-                    <p>
-                        This is a <b>90 minutes</b> long tutorial. We divide the tutorial into two sections of 40
-                        minutes
-                        each
-                        with a 10-minute break in between. The tutorial will be interactive and the attendants will be
-                        able
-                        to
-                        follow the explanations and try them in a notebook that will be shared in a later date. We have
-                        the
-                        following tentative outline:
-                    </p>
-                    <ol>
-                        <li>
-                            Part 1: Introduction to Evolutionary Game Theory
-                            <ol>
-                                <li>Motivation and examples</li>
-                                <li>Evolutionary Dynamics and Game Theory</li>
-                                <li>Infinite and Finite populations</li>
-                                <li>Social Dynamics and Mechanisms for the Evolution of Cooperation</li>
-                            </ol>
-                        </li>
-                        <li>
-                            Part 2: Interactions in structured populations and Applications
-                            <ol>
-                                <li>Introduction to Games on Networks</li>
-                                <li>Practical challenges of implementing EGT models on unstructured and structured
-                                    populations
-                                </li>
-                                <li>EGT and AI: multi-agent interactions from a complex systems perspective</li>
-                            </ol>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </section>
-
-        <!-- Second Section -->
-        <section id="second" class="main">
-            <div class="spotlight">
-                <div class="content">
-                    <header class="major">
-                        <h2>Pre-requisites</h2>
-                    </header>
-                    <p>Even though this tutorial aims to target a general audience in AI, we recommend to have
-                        basic knowledge in the following areas:</p>
-                    <ul>
-                        <li>Basic knowledge of dynamical systems</li>
-                        <li>Basic knowledge of Complex Networks</li>
-                        <li>Basic knowledge of Markov Chains</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Second Section -->
-        <section id="third" class="main">
-            <div class="spotlight">
-                <div class="content">
-                    <header class="major">
-                        <h2>Objectives</h2>
-                    </header>
-                    <p>The importance of AI in social ecosystems, and particularly, its effect on human cooperation and
-                        fairness, has gained increasing attention. Evolutionary Game Theory (EGT) provides a powerful
-                        methodological framework for the study of the evolution of cooperation in large populations.
-                        Yet, the AI and EGT research communities rarely engage. We believe the present tutorial will
-                        raise awareness of the importance of EGT for social cooperative AI and introduce methods of
-                        large relevance for AI researchers in this field. </p>
-
-                    <p>
-                        Our tutorial serves the following objectives:
-                    </p>
-                    <ul>
-                        <li>Motivate and explain a topic of emerging importance for AI
-                        </li>
-                        <li>Provide instructions in established but specialized AI methodologies</li>
-                        <li>Introduce AI audience to an external topic that can motivate or use AI research</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Get Started -->
-        <section id="cta" class="main special">
-            <header class="major">
-                <h2>Material</h2>
-            </header>
-            <p>To follow the tutorial, you should have both Python (>=3.8) and Jupyter notebook installed.
-                Please, please clone the repository <a href="https://github.com/Socrats/egt-tutorial">egt-tutorial</a>.
-                This repository contains several jupyter notebooks. Follow the following steps: </p>
-            <ol>
-                <li>
-                    Open the notebook named "ECAI_tutorial.ipynb".
-                </li>
-                <li>Install all the pre-requisites indicated there.</li>
-            </ol>
-            <p>Other relevant material can be found <a href="https://github.com/Socrats/EGTTools">here</a>. </p>
-        </section>
-
-        <!-- Get Started -->
-        <section id="references" class="main">
-            <header class="major">
-                <h2>Important References</h2>
-            </header>
-            <ol>
-                <li>Nash Jr, John F. "Equilibrium points in n-person games." Proceedings of the national academy of
-                    sciences 36.1 (1950): 48-49.
-                </li>
-                <li>M. Nowak, Evolutionary dynamics; exploring the equations of life.</li>
-                <li>Sigmund, K., 2010. The Calculus of Selfishness. Princeton University Press.</li>
-                <li>Boccaletti, S., Latora, V., Moreno, Y., Chavez, M. & Hwang, D. Complex networks: Structure and
-                    dynamics. Physics Reports 424, 175–308 (2006).
-                </li>
-                <li>Domingos, Elias Fernández, Francisco C. Santos, and Tom Lenaerts. "EGTtools: Evolutionary game
-                    dynamics in Python." Iscience 26.4 (2023).
-                </li>
-            </ol>
-        </section>
-
+<!-- Header -->
+<header id="header">
+    <div class="inner">
+        <a href="#" class="image avatar"><img src="images/profile_e_web.png" alt=""/></a>
+        <h1><strong>Elias Fernández Domingos</strong><br/>
+            Postdoctoral researcher at AI Lab<br/>
+            VUB, Belgium.</h1>
     </div>
+</header>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <section>
-            <h2>Elias Fernández Domingos</h2>
-            <p>I am a post-doctoral researcher working in the intersection of AI, Behavioral Economics and Complex
-                Systems. I am currently affiliated with the Université Libre de Bruxelles (ULB) and the Vrije
-                Universiteit Brussel (VUB), both in Belgium.</p>
-            <ul class="actions">
-                <li><a href="generic.html" class="button">Learn More</a></li>
-            </ul>
+<!-- Main -->
+<div id="main">
+
+    <!-- One -->
+    <section id="one">
+        <header class="major">
+            <h2>About me</h2>
+        </header>
+        <p>I am a Postdoctoral researcher (F.W.O. fellow) at the Artificial Intelligence
+            Lab
+            of the Vrije
+            Universiteit Brussel. Also affiliated with the Machine Learning Group (Université Libre de
+            Bruxelles). He is interested in the origins of cooperation in social interactions and how we
+            can
+            maintain it in an increasingly complex and hybrid human-AI world. In his research, he
+            applies
+            concepts and methods from (Evolutionary) Game Theory, Behavioural economics, and Machine
+            Learning to model collective (strategic) behaviour and validate it through behavioural
+            economic
+            Experiments. He is the creator of <a href="https://github.com/Socrats/EGTTools">EGTtools</a>
+            a
+            Python/C++
+            toolbox for Evolutionary Game Theory.</p>
+        <ul class="actions">
+            <li><a href="#" class="button">Learn More</a></li>
+        </ul>
+    </section>
+
+    <!-- Two -->
+    <section id="two">
+        <h2>Recent Work</h2>
+        <div class="row">
+            <article class="col-6 col-12-xsmall work-item">
+                <a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt=""/></a>
+                <h3>Magna sed consequat tempus</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+            <article class="col-6 col-12-xsmall work-item">
+                <a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt=""/></a>
+                <h3>Ultricies lacinia interdum</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+            <article class="col-6 col-12-xsmall work-item">
+                <a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt=""/></a>
+                <h3>Tortor metus commodo</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+            <article class="col-6 col-12-xsmall work-item">
+                <a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt=""/></a>
+                <h3>Quam neque phasellus</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+            <article class="col-6 col-12-xsmall work-item">
+                <a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt=""/></a>
+                <h3>Nunc enim commodo aliquet</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+            <article class="col-6 col-12-xsmall work-item">
+                <a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt=""/></a>
+                <h3>Risus ornare lacinia</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+        </div>
+        <ul class="actions">
+            <li><a href="#" class="button">Full Portfolio</a></li>
+        </ul>
+    </section>
+
+    <!-- Three -->
+    <section id="three">
+        <h2>Teaching</h2>
+        <p>Here is some pedagogical material for the course I help teach about Multi-agent systems:</p>
+        <div class="row">
+            <p>Some material to come</p>
+        </div>
+        <p>I have also given the following courses and tutorials at conferences and summer schools:</p>
+        <div class="card-deck">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Reinforcement Learning and Evolutionary Game Theory Are Two Sides of the Same
+                        Coin</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Tutorial at IC2S2 2025</h6>
+                    <p class="card-text">This tutorial introduces EGT and RL frameworks for modeling social
+                        dynamics.</p>
+                    <a href="ic2s2_tutorial_2025/" class="card-link">Link to tutorial</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Reinforcement Learning and Evolutionary Game Theory Are Two Sides of the Same
+                        Coin</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Tutorial at IC2S2 2025</h6>
+                    <p class="card-text">This tutorial introduces EGT and RL frameworks for modeling social
+                        dynamics.</p>
+                    <a href="ic2s2_tutorial_2025/" class="card-link">Link to tutorial</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Reinforcement Learning and Evolutionary Game Theory Are Two Sides of the Same
+                        Coin</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Tutorial at IC2S2 2025</h6>
+                    <p class="card-text">This tutorial introduces EGT and RL frameworks for modeling social
+                        dynamics.</p>
+                    <a href="ic2s2_tutorial_2025/" class="card-link">Link to tutorial</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Website Preview
+                </div>
+                <div class="card-body">
+                    <iframe src="ic2s2_tutorial_2025/" style="width: 100%; height: 400px; border: none;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Four -->
+    <!--
+        <section id="four">
+            <h2>Elements</h2>
+
+            <section>
+                <h4>Text</h4>
+                <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+                This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+                This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+                <hr />
+                <header>
+                    <h4>Heading with a Subtitle</h4>
+                    <p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+                </header>
+                <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+                <header>
+                    <h5>Heading with a Subtitle</h5>
+                    <p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+                </header>
+                <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+                <hr />
+                <h2>Heading Level 2</h2>
+                <h3>Heading Level 3</h3>
+                <h4>Heading Level 4</h4>
+                <h5>Heading Level 5</h5>
+                <h6>Heading Level 6</h6>
+                <hr />
+                <h5>Blockquote</h5>
+                <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+                <h5>Preformatted</h5>
+                <pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+print 'Iteration ' + i;
+deck.shuffle();
+i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+            </section>
+
+            <section>
+                <h4>Lists</h4>
+                <div class="row">
+                    <div class="col-6 col-12-xsmall">
+                        <h5>Unordered</h5>
+                        <ul>
+                            <li>Dolor pulvinar etiam magna etiam.</li>
+                            <li>Sagittis adipiscing lorem eleifend.</li>
+                            <li>Felis enim feugiat dolore viverra.</li>
+                        </ul>
+                        <h5>Alternate</h5>
+                        <ul class="alt">
+                            <li>Dolor pulvinar etiam magna etiam.</li>
+                            <li>Sagittis adipiscing lorem eleifend.</li>
+                            <li>Felis enim feugiat dolore viverra.</li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-12-xsmall">
+                        <h5>Ordered</h5>
+                        <ol>
+                            <li>Dolor pulvinar etiam magna etiam.</li>
+                            <li>Etiam vel felis at lorem sed viverra.</li>
+                            <li>Felis enim feugiat dolore viverra.</li>
+                            <li>Dolor pulvinar etiam magna etiam.</li>
+                            <li>Etiam vel felis at lorem sed viverra.</li>
+                            <li>Felis enim feugiat dolore viverra.</li>
+                        </ol>
+                        <h5>Icons</h5>
+                        <ul class="icons">
+                            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                            <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                            <li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h5>Actions</h5>
+                <ul class="actions">
+                    <li><a href="#" class="button primary">Default</a></li>
+                    <li><a href="#" class="button">Default</a></li>
+                </ul>
+                <ul class="actions small">
+                    <li><a href="#" class="button primary small">Small</a></li>
+                    <li><a href="#" class="button small">Small</a></li>
+                </ul>
+                <div class="row">
+                    <div class="col-6 col-12-small">
+                        <ul class="actions stacked">
+                            <li><a href="#" class="button primary">Default</a></li>
+                            <li><a href="#" class="button">Default</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-12-small">
+                        <ul class="actions stacked">
+                            <li><a href="#" class="button primary small">Small</a></li>
+                            <li><a href="#" class="button small">Small</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-12-small">
+                        <ul class="actions stacked">
+                            <li><a href="#" class="button primary fit">Default</a></li>
+                            <li><a href="#" class="button fit">Default</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-12-small">
+                        <ul class="actions stacked">
+                            <li><a href="#" class="button primary small fit">Small</a></li>
+                            <li><a href="#" class="button small fit">Small</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h4>Table</h4>
+                <h5>Default</h5>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Item One</td>
+                                <td>Ante turpis integer aliquet porttitor.</td>
+                                <td>29.99</td>
+                            </tr>
+                            <tr>
+                                <td>Item Two</td>
+                                <td>Vis ac commodo adipiscing arcu aliquet.</td>
+                                <td>19.99</td>
+                            </tr>
+                            <tr>
+                                <td>Item Three</td>
+                                <td> Morbi faucibus arcu accumsan lorem.</td>
+                                <td>29.99</td>
+                            </tr>
+                            <tr>
+                                <td>Item Four</td>
+                                <td>Vitae integer tempus condimentum.</td>
+                                <td>19.99</td>
+                            </tr>
+                            <tr>
+                                <td>Item Five</td>
+                                <td>Ante turpis integer aliquet porttitor.</td>
+                                <td>29.99</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td>100.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <h5>Alternate</h5>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Item One</td>
+                                <td>Ante turpis integer aliquet porttitor.</td>
+                                <td>29.99</td>
+                            </tr>
+                            <tr>
+                                <td>Item Two</td>
+                                <td>Vis ac commodo adipiscing arcu aliquet.</td>
+                                <td>19.99</td>
+                            </tr>
+                            <tr>
+                                <td>Item Three</td>
+                                <td> Morbi faucibus arcu accumsan lorem.</td>
+                                <td>29.99</td>
+                            </tr>
+                            <tr>
+                                <td>Item Four</td>
+                                <td>Vitae integer tempus condimentum.</td>
+                                <td>19.99</td>
+                            </tr>
+                            <tr>
+                                <td>Item Five</td>
+                                <td>Ante turpis integer aliquet porttitor.</td>
+                                <td>29.99</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td>100.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h4>Buttons</h4>
+                <ul class="actions">
+                    <li><a href="#" class="button primary">Primary</a></li>
+                    <li><a href="#" class="button">Default</a></li>
+                </ul>
+                <ul class="actions">
+                    <li><a href="#" class="button large">Large</a></li>
+                    <li><a href="#" class="button">Default</a></li>
+                    <li><a href="#" class="button small">Small</a></li>
+                </ul>
+                <ul class="actions fit">
+                    <li><a href="#" class="button primary fit">Fit</a></li>
+                    <li><a href="#" class="button fit">Fit</a></li>
+                </ul>
+                <ul class="actions fit small">
+                    <li><a href="#" class="button primary fit small">Fit + Small</a></li>
+                    <li><a href="#" class="button fit small">Fit + Small</a></li>
+                </ul>
+                <ul class="actions">
+                    <li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+                    <li><a href="#" class="button icon solid fa-download">Icon</a></li>
+                </ul>
+                <ul class="actions">
+                    <li><span class="button primary disabled">Primary</span></li>
+                    <li><span class="button disabled">Default</span></li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>Form</h4>
+                <form method="post" action="#">
+                    <div class="row gtr-uniform gtr-50">
+                        <div class="col-6 col-12-xsmall">
+                            <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+                        </div>
+                        <div class="col-6 col-12-xsmall">
+                            <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+                        </div>
+                        <div class="col-12">
+                            <select name="demo-category" id="demo-category">
+                                <option value="">- Category -</option>
+                                <option value="1">Manufacturing</option>
+                                <option value="1">Shipping</option>
+                                <option value="1">Administration</option>
+                                <option value="1">Human Resources</option>
+                            </select>
+                        </div>
+                        <div class="col-4 col-12-small">
+                            <input type="radio" id="demo-priority-low" name="demo-priority" checked>
+                            <label for="demo-priority-low">Low Priority</label>
+                        </div>
+                        <div class="col-4 col-12-small">
+                            <input type="radio" id="demo-priority-normal" name="demo-priority">
+                            <label for="demo-priority-normal">Normal Priority</label>
+                        </div>
+                        <div class="col-4 col-12-small">
+                            <input type="radio" id="demo-priority-high" name="demo-priority">
+                            <label for="demo-priority-high">High Priority</label>
+                        </div>
+                        <div class="col-6 col-12-small">
+                            <input type="checkbox" id="demo-copy" name="demo-copy">
+                            <label for="demo-copy">Email me a copy of this message</label>
+                        </div>
+                        <div class="col-6 col-12-small">
+                            <input type="checkbox" id="demo-human" name="demo-human" checked>
+                            <label for="demo-human">I am a human and not a robot</label>
+                        </div>
+                        <div class="col-12">
+                            <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <ul class="actions">
+                                <li><input type="submit" value="Send Message" class="primary" /></li>
+                                <li><input type="reset" value="Reset" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section>
+                <h4>Image</h4>
+                <h5>Fit</h5>
+                <div class="box alt">
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
+                        <div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
+                        <div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
+                        <div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
+                        <div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
+                        <div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
+                        <div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
+                        <div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
+                        <div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
+                        <div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
+                    </div>
+                </div>
+                <h5>Left &amp; Right</h5>
+                <p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+                <p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+            </section>
+
         </section>
-        <section>
-            <h2>Contact</h2>
-            <dl class="alt">
-                <dt>Email</dt>
-                <dd>elias dot fernandez dot domingos at ulb dot be</dd>
-            </dl>
-            <ul class="icons">
-                <li><a href="https://twitter.com/esocrats" class="icon brands fa-twitter alt"><span
-                        class="label">Twitter</span></a></li>
-                <li><a href="https://github.com/Socrats" class="icon brands fa-github alt"><span
-                        class="label">GitHub</span></a></li>
-            </ul>
-        </section>
-        <p class="copyright">&copy; Elias Fernández Domingos. | Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-    </footer>
+    -->
 
 </div>
 
+<!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <ul class="icons">
+            <li><a href="https://github.com/Socrats/" class="icon brands fa-github"><span
+                    class="label">Github</span></a></li>
+            <li><a href="mailto:elias.fernandez.domingos@vub.be" class="icon solid fa-envelope"><span class="label">Email</span></a>
+            </li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; Elias Fernández Domingos</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </div>
+</footer>
+
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
